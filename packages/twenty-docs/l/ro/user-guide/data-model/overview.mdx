@@ -1,0 +1,180 @@
+---
+title: Model de date
+description: Află ce este un model de date și cum să proiectezi unul care se potrivește afacerii tale.
+image: /images/user-guide/fields/custom_data_model.png
+---
+
+<Frame>
+  <img src="/images/user-guide/fields/custom_data_model.png" alt="Model de date" />
+</Frame>
+
+## Ce este un model de date?
+
+Un model de date este structura care definește cum sunt organizate informațiile în CRM-ul tău. Gândește-te la el ca la **planul** datelor tale despre clienți — îl proiectezi o singură dată, apoi îl umpli cu datele tale reale.
+
+## Concepte cheie
+
+### Obiecte
+
+**Obiectele** sunt principalele categorii de date din CRM-ul tău. Fiecare obiect reprezintă un tip de element pe care vrei să îl urmărești.
+
+Twenty include obiecte standard:
+
+* **People** — persoane (contacte, leaduri, parteneri)
+* **Companii** — organizații
+* **Oportunități** — tranzacții sau vânzări
+* **Note** — note atașate la înregistrări
+* **Sarcini** — sarcini legate de înregistrări
+
+Poți crea și **obiecte personalizate** pentru orice este specific afacerii tale (de ex., Proiecte, Abonamente, Evenimente).
+
+### Câmpuri
+
+**Câmpurile** sunt proprietățile sau atributele care descriu fiecare obiect. Ele stochează informațiile efective.
+
+De exemplu, obiectul **People** are câmpuri precum:
+
+* Nume
+* Email
+* Telefon
+* Funcție
+* Companie (o relație cu obiectul Companies)
+
+Câmpurile au diferite **tipuri**: text, număr, dată, selectare, selecție multiplă, relație și altele. Poți adăuga câmpuri personalizate la orice obiect.
+
+### Înregistrări
+
+**Înregistrările** sunt intrările individuale dintr-un obiect — datele efective pe care le creezi și le gestionezi.
+
+De exemplu:
+
+* "John Smith" este o **înregistrare** în obiectul People
+* "Acme Corp" este o **înregistrare** în obiectul Companies
+
+**O analogie:**
+
+| Conceptul de model de date | Analogie din lumea reală                                |
+| -------------------------- | ------------------------------------------------------- |
+| **Obiecte**                | Secțiuni într-o carte (categoriile)                     |
+| **Câmpuri**                | Coloane într-o foaie de calcul (proprietățile)          |
+| **Înregistrări**           | Rânduri într-o foaie de calcul (intrările propriu-zise) |
+
+Proiectezi modelul de date (obiecte + câmpuri) o singură dată, apoi creezi multe înregistrări în acea structură.
+
+## De ce să-ți personalizezi modelul de date?
+
+Fiecare afacere funcționează diferit. Personalizarea modelului tău de date înseamnă că poți modela Twenty în jurul proceselor **tale**, în loc să le forțezi într-un sistem rigid.
+
+Twenty oferă flexibilitate totală:
+
+* Creează oricâte obiecte personalizate de care ai nevoie
+* Adaugă un număr nelimitat de câmpuri personalizate
+* Prețul nu se schimbă în funcție de personalizare
+
+## Sfaturi pentru a proiecta modelul tău de date
+
+### 1. Începe cu obiectele tale de bază
+
+Identifică principalele concepte cu care lucrezi. Twenty oferă deja:
+
+* **People** — contactele tale
+* **Companies** — conturile tale
+* **Oportunități** — tranzacțiile tale
+
+Gândește-te la ce altceva ai putea avea nevoie:
+
+* Stripe ar avea nevoie de un obiect `Subscriptions`
+* Airbnb ar avea nevoie de un obiect `Trips`
+* Un accelerator ar avea nevoie de un obiect `Batches`
+
+### 2. Folosește câmpuri pentru variații, nu obiecte noi
+
+Dacă ceva este doar o caracteristică a unui obiect existent, fă-l un **câmp**.
+
+**Folosește câmpuri pentru:**
+
+* Categorii și etichete (de ex., `Industry` pentru Companies)
+* Valori de stare (de ex., `Stage` pentru Opportunities)
+* Atribute și proprietăți
+
+### 3. Creează un obiect atunci când stă pe cont propriu
+
+Dacă conceptul are propriul ciclu de viață, propriile proprietăți sau relații, merită un obiect.
+
+**Creează un obiect pentru:**
+
+* **Proiecte** — au termene limită, responsabili și sarcini
+* **Abonamente** — conectează companii, produse și facturi
+* **Evenimente** — implică participanți și acțiuni ulterioare
+
+Acestea depășesc un singur câmp deoarece au propriile date și relații.
+
+### 4. Creează un obiect atunci când numărul înregistrărilor este nedeterminat
+
+Dacă ceva poate fi asociat de mai multe ori și nu știi de câte, folosește un obiect.
+
+**Abordare greșită:**
+Crearea de câmpuri precum `Product 1`, `Product 2`, `Product 3`...
+
+**Abordare bună:**
+Creează un obiect `Products` și relaționează-l cu înregistrările. Astfel, poți susține unul, două sau o sută de produse fără a-ți schimba modelul.
+
+### 5. Păstrează totul simplu la început
+
+Începe cu câmpurile. Treci la obiecte noi doar când simți limitele:
+
+* Too many fields on one object
+* Repeated records that should be separate
+* Relationships that don't fit neatly
+
+## Special Note on People, Companies, and Opportunities
+
+<Warning>
+  **Email and calendar sync only works with People, Companies, and Opportunities.**
+
+  These are the only objects where you can access synchronized emails and meetings from your mailbox/calendar. We recommend using them as much as possible.
+</Warning>
+
+**Best practices:**
+
+* If you need categories of People, use fields (not new objects)
+* Example: Use a `Person Type` field with values "Prospect" and "Partner" instead of creating separate objects
+* Create different **views** to filter: one showing partners, another showing prospects
+
+**It's okay to have fields that don't apply to every record.** For example, a `Referral Link` field on People that only applies when `Person Type = Partner`. Hide this field from views where it's not relevant.
+
+## Questions to Guide Your Choice
+
+Întreabă-te:
+
+<Check>Is this just a property of something I already have, or does it need its own properties?</Check>
+<Check>Will I ever need to track multiple of these per record, without knowing how many?</Check>
+<Check>Does this concept connect to several different objects, not just one?</Check>
+<Check>Will it have its own lifecycle (stages, start/end dates)?</Check>
+
+If the answer is "yes" to one or more, it's probably time for a new object.
+
+## Accessing Your Data Model
+
+1. Go to **Settings** in the left sidebar
+2. Click **Data Model**
+3. View all your objects (standard and custom)
+4. Click any object to see and edit its fields
+
+<Note>
+  **Don't see Data Model in Settings?**
+
+  Access to the data model is usually restricted to administrators. Contact your workspace admin if you need access.
+</Note>
+
+## Pașii următori
+
+Once you've planned your data model:
+
+* [Cum să creezi obiecte personalizate](/l/ro/user-guide/data-model/how-tos/create-custom-objects)
+* [Cum să creezi câmpuri personalizate](/l/ro/user-guide/data-model/how-tos/create-custom-fields)
+* [Cum să creezi câmpuri de relație](/l/ro/user-guide/data-model/how-tos/create-relation-fields)
+
+## Ai nevoie de ajutor?
+
+Our team can help you design and create the data model you need. Discover our [Implementation Services](/l/ro/user-guide/getting-started/capabilities/implementation-services).
