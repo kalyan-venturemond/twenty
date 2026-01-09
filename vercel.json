@@ -1,0 +1,13 @@
+{
+    "version": 2,
+    "buildCommand": "yarn workspace twenty-shared build && yarn workspace twenty-ui build && yarn workspace twenty-front build",
+    "outputDirectory": "packages/twenty-front/build",
+    "framework": "vite",
+    "installCommand": "yarn install",
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ]
+}
