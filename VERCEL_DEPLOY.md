@@ -15,7 +15,7 @@ Since Twenty is a monorepo with a heavy backend, deploying only the frontend to 
 
 2. **Configure Build Settings**:
    - **Framework Preset**: Select `Vite`.
-   - **Build Command**: `yarn workspace twenty-front build`
+   - **Build Command**: `yarn workspace twenty-shared build && yarn workspace twenty-ui build && yarn workspace twenty-front build`
    - **Output Directory**: `packages/twenty-front/build`
 
 3. **Environment Variables**:
