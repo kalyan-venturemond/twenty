@@ -4201,6 +4201,58 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@blocknote/core@npm:0.31.3":
+  version: 0.31.3
+  resolution: "@blocknote/core@npm:0.31.3"
+  dependencies:
+    "@emoji-mart/data": "npm:^1.2.1"
+    "@shikijs/types": "npm:3.2.1"
+    "@tiptap/core": "npm:^2.12.0"
+    "@tiptap/extension-bold": "npm:^2.11.5"
+    "@tiptap/extension-code": "npm:^2.11.5"
+    "@tiptap/extension-gapcursor": "npm:^2.11.5"
+    "@tiptap/extension-history": "npm:^2.11.5"
+    "@tiptap/extension-horizontal-rule": "npm:^2.11.5"
+    "@tiptap/extension-italic": "npm:^2.11.5"
+    "@tiptap/extension-link": "npm:^2.11.5"
+    "@tiptap/extension-paragraph": "npm:^2.11.5"
+    "@tiptap/extension-strike": "npm:^2.11.5"
+    "@tiptap/extension-table-cell": "npm:^2.11.5"
+    "@tiptap/extension-table-header": "npm:^2.11.5"
+    "@tiptap/extension-text": "npm:^2.11.5"
+    "@tiptap/extension-underline": "npm:^2.11.5"
+    "@tiptap/pm": "npm:^2.12.0"
+    emoji-mart: "npm:^5.6.0"
+    hast-util-from-dom: "npm:^5.0.1"
+    prosemirror-dropcursor: "npm:^1.8.1"
+    prosemirror-highlight: "npm:^0.13.0"
+    prosemirror-model: "npm:^1.25.1"
+    prosemirror-state: "npm:^1.4.3"
+    prosemirror-tables: "npm:^1.6.4"
+    prosemirror-transform: "npm:^1.10.4"
+    prosemirror-view: "npm:^1.38.1"
+    rehype-format: "npm:^5.0.1"
+    rehype-parse: "npm:^9.0.1"
+    rehype-remark: "npm:^10.0.0"
+    rehype-stringify: "npm:^10.0.1"
+    remark-gfm: "npm:^4.0.1"
+    remark-parse: "npm:^11.0.0"
+    remark-rehype: "npm:^11.1.1"
+    remark-stringify: "npm:^11.0.0"
+    unified: "npm:^11.0.5"
+    uuid: "npm:^8.3.2"
+    y-prosemirror: "npm:^1.3.4"
+    y-protocols: "npm:^1.0.6"
+    yjs: "npm:^13.6.15"
+  peerDependencies:
+    "@hocuspocus/provider": ^2.15.2
+  peerDependenciesMeta:
+    "@hocuspocus/provider":
+      optional: true
+  checksum: 10c0/c232221dcbb5b17a87a6f56fbc1f4e94f2921e0612857d226f19073c96b834c5b0d4734ee164fef95e8989f8ccdafaf7b5ec9b91e34c4420fa989df5a5622bcb
+  languageName: node
+  linkType: hard
+
 "@blocknote/mantine@npm:^0.31.1":
   version: 0.31.1
   resolution: "@blocknote/mantine@npm:0.31.1"
@@ -4258,17 +4310,17 @@ __metadata:
   linkType: hard
 
 "@blocknote/xl-docx-exporter@npm:^0.31.1":
-  version: 0.31.1
-  resolution: "@blocknote/xl-docx-exporter@npm:0.31.1"
+  version: 0.31.3
+  resolution: "@blocknote/xl-docx-exporter@npm:0.31.3"
   dependencies:
-    "@blocknote/core": "npm:0.31.1"
+    "@blocknote/core": "npm:0.31.3"
     buffer: "npm:^6.0.3"
     docx: "npm:^9.0.2"
     image-meta: "npm:^0.2.1"
   peerDependencies:
     react: ^18.0 || ^19.0 || >= 19.0.0-rc
     react-dom: ^18.0 || ^19.0 || >= 19.0.0-rc
-  checksum: 10c0/59ff00a404cd1bd160cf41c250ab623b096522018d681a6edf5140e675758a7af54ce81a775d5d8f4994c5245262c7b1a20beb400112aae2d23c34fae3541529
+  checksum: 10c0/8bd7008b3fcd0aa7668cc1ba11421177f34f5c6e6b5d00a315f08b911e5e4470d70bdb0c3f64874a7cf62518fc8201a558b8995477a4c792de61acab21193a5f
   languageName: node
   linkType: hard
 
